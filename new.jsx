@@ -1,56 +1,4 @@
-/**
- * SkillSwap — Single-file React SPA
- * File: src/App.js
- *
- * README (short)
- * ----------------
- * Project: SkillSwap – A Local Skill Exchange Platform
- * Purpose: A minimal single-file SPA demonstrating required features for Assignment-09_category_Sunflower.
- *
- * How to use:
- * 1. Create a React app (CRA or Vite):
- *    npx create-react-app skillswap
- *    cd skillswap
- *
- * 2. Install required packages:
- *    npm install firebase react-router-dom swiper react-hot-toast aos
- *
- * 3. Replace src/App.js with this file. If using CRA, also ensure src/index.js renders <App />.
- *
- * 4. Environment variables (create .env at project root):
- *    REACT_APP_FIREBASE_API_KEY=your_api_key
- *    REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
- *    REACT_APP_FIREBASE_PROJECT_ID=your_project_id
- *    REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
- *    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
- *    REACT_APP_FIREBASE_APP_ID=your_app_id
- *
- *    (These keys will be read from process.env — used as environment variables.)
- *
- * 5. Start:
- *    npm start
- *
- * Notes:
- * - This component uses HashRouter to avoid SPA reload route errors on static hosts.
- * - For hosting, add authorized domain to Firebase console and set env vars at the host platform.
- *
- * GitHub commits & README requirement:
- * - Include at least 10 meaningful commits when you submit (commit messages suggested in comment below).
- *
- * Suggested commit messages (example):
- * - init: create project & install deps
- * - feat: add basic navbar and footer
- * - feat: add skill JSON and home cards
- * - feat: implement Swiper hero
- * - feat: add firebase auth skeleton
- * - feat: implement signup & login with validation
- * - feat: protected skill details and booking form
- * - feat: my profile & updateProfile functionality
- * - chore: add AOS animations & react-hot-toast
- * - docs: add README + instructions
- *
- * ----------------
- */
+
 
 import React, { useEffect, useState } from "react";
 import {
@@ -83,14 +31,8 @@ import toast, { Toaster } from "react-hot-toast";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import "./App.css"; // optional: if you want to override styling separately
+import "./App.css"; 
 
-/* ----------------------------
-   Firebase initialization
-   ----------------------------
-   Uses environment variables for keys (REACT_APP_...).
-   Make sure you create a .env file with your Firebase config.
-*/
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "<API_KEY>",
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || "<AUTH_DOMAIN>",
@@ -106,10 +48,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-/* ----------------------------
-   Sample skill JSON data (>=6 items)
-   Update image URLs by uploading to postimages / imgbb as needed.
-*/
 const SKILLS = [
   {
     skillId: 1,
@@ -777,3 +715,4 @@ function NotFound() {
     </div>
   );
 }
+
