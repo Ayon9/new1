@@ -9,7 +9,6 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
-
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -664,6 +663,7 @@ function NotFound() {
     </div>
   );
 }
+
 
 
 
