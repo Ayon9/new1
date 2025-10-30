@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import {
   HashRouter as Router,
@@ -129,10 +127,6 @@ const SKILLS = [
   },
 ];
 
-/* ----------------------------
-   Utility: simple responsive styles (JS-in-CSS).
-   Keep concise — you can replace with external CSS.
-*/
 const containerStyle = {
   maxWidth: 1100,
   margin: "0 auto",
@@ -715,4 +709,5 @@ function NotFound() {
     </div>
   );
 }
+
 
