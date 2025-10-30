@@ -157,13 +157,9 @@ function ProtectedRoute({ children }) {
 
   if (user) return children;
 
-  // redirect to login and preserve where we came from
   return <Navigate to="/login" state={{ from: location }} replace />;
 }
 
-/* ----------------------------
-   Main App Component
------------------------------*/
 export default function App() {
   useEffect(() => {
     AOS.init({ duration: 700 });
@@ -202,9 +198,6 @@ export default function App() {
   );
 }
 
-/* ----------------------------
-   Navbar
------------------------------*/
 function AppNavbar() {
   const [user, setUser] = useState(auth.currentUser);
   useEffect(() => {
@@ -258,9 +251,6 @@ function AppNavbar() {
   );
 }
 
-/* ----------------------------
-   Footer
------------------------------*/
 function Footer() {
   return (
     <footer style={{ borderTop: "1px solid #eee", padding: "20px 0", marginTop: 24, background: "#fafafa" }}>
@@ -709,5 +699,6 @@ function NotFound() {
     </div>
   );
 }
+
 
 
