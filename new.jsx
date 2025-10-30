@@ -142,10 +142,6 @@ const navStyle = {
 };
 
 const brandStyle = { fontWeight: 700, fontSize: 20 };
-
-/* ----------------------------
-   ProtectedRoute wrapper
------------------------------*/
 function ProtectedRoute({ children }) {
   const [user, setUser] = useState(auth.currentUser);
   const location = useLocation();
@@ -268,11 +264,7 @@ function Footer() {
   );
 }
 
-/* ----------------------------
-   Home Page
------------------------------*/
 function Home() {
-  // top rated providers: static for demo
   const topProviders = [
     { name: "Rafi Khan", rating: 4.9 },
     { name: "Nina Bose", rating: 4.85 },
@@ -366,10 +358,6 @@ function SkillCard({ skill }) {
   );
 }
 
-/* ----------------------------
-   Skill Details (Protected)
-   - If not logged in, redirect to /login and return here after login.
------------------------------*/
 function SkillDetailsWrapper() {
   return (
     <ProtectedRoute>
@@ -426,9 +414,6 @@ function SkillDetails() {
   );
 }
 
-/* ----------------------------
-   Login Page
------------------------------*/
 function Login() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -439,7 +424,6 @@ function Login() {
   const [showPass, setShowPass] = useState(false);
 
   useEffect(() => {
-    // If user already logged in, navigate
     if (auth.currentUser) navigate(from, { replace: true });
   }, [navigate, from]);
 
@@ -496,10 +480,6 @@ function Login() {
     </div>
   );
 }
-
-/* ----------------------------
-   Signup page with password validation
------------------------------*/
 function Signup() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -579,10 +559,6 @@ function Signup() {
     </div>
   );
 }
-
-/* ----------------------------
-   Profile page
------------------------------*/
 function Profile() {
   const [user, setUser] = useState(auth.currentUser);
   const navigate = useNavigate();
@@ -610,9 +586,6 @@ function Profile() {
   );
 }
 
-/* ----------------------------
-   Update Profile page (uses updateProfile)
------------------------------*/
 function UpdateProfile() {
   const [user, setUser] = useState(auth.currentUser);
   const [name, setName] = useState(user?.displayName || "");
@@ -652,11 +625,6 @@ function UpdateProfile() {
   );
 }
 
-/* ----------------------------
-   Forgot Password page
-   - Pre-fills email if provided from login link
-   - On reset, send reset email and redirect to Gmail (per assignment)
------------------------------*/
 function ForgotPassword() {
   const location = useLocation();
   const prefilled = location.state?.email || "";
@@ -688,9 +656,6 @@ function ForgotPassword() {
   );
 }
 
-/* ----------------------------
-   Not Found
------------------------------*/
 function NotFound() {
   return (
     <div style={{ marginTop: 20 }}>
@@ -699,6 +664,7 @@ function NotFound() {
     </div>
   );
 }
+
 
 
 
